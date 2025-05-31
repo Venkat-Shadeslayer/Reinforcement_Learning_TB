@@ -119,7 +119,26 @@ if __name__ == "__main__":
     plot_results(rewards_sample, rewards_const)
 
 
+"""Conclusion:
 
+Learn more
+In reinforcement learning scenarios, especially when dealing with non-stationary environments, the constant step-size method generally outperforms the sample average method. This is because constant step-size methods can adapt more readily to changes in rewards over time, while sample averaging can get "stuck" on an outdated estimate. 
+1. Adaptability to Changes:
+
+Constant Step-Size:
+    . This method allows for a continuous stream of learning, where more recent data is given more weight. The step size parameter controls how quickly the agent adjusts its estimates, allowing it to react to changes in the environment.
+
+Sample Averaging:
+.This method averages rewards over a set of trials, but it doesn't inherently prioritize recent data. As a result, it may take longer to adapt to shifts in the environment and may not be as efficient as the constant step-size approach when dealing with non-stationary problems. 
+
+2. Bias and Exploration:
+
+Constant Step-Size:
+    . While the initial estimates can introduce a bias, the bias typically diminishes as the agent gathers more experience. This bias can even be leveraged to encourage exploration, as optimistic initial values can make the agent more likely to try different actions.
+
+Sample Averaging:
+.       The bias from initial estimates is only removed after all actions have been explored at least once. This can make it less effective in scenarios where exploration is crucial or when the environment changes rapidly
+"""
 
 
 
